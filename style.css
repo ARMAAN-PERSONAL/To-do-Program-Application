@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Blue theme color */
+}
+
+form {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+form input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #007bff; /* Blue theme color */
+    border-radius: 4px 0 0 4px;
+}
+
+form button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid #007bff; /* Blue theme color */
+    background-color: #007bff; /* Blue theme color */
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f0f9ff; /* Light blue background */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-left: 4px solid #007bff; /* Blue theme color */
+}
+
+li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #dc3545; /* Red delete button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.image-container {
+    text-align: center;
+    padding: 1em;
+    transition: transform 1s ease;
+}
+
+.image-container:hover {
+    text-align: center;
+    padding: 1em;
+    transform: rotateY(360deg);
+}
+
+.Images {
+    display: inline-block;
+    margin: 0 auto;
+    height: 30vh;
+    width: 16vw;
+    border: 5px solid #f0f8ff;
+    border-radius: 69%;
+}
