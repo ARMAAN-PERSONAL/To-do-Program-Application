@@ -9,12 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load tasks from local storage, or initialize to an empty array if not present
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
+    // Function to format the date
+    function formatDate(date) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        return new Date(date).toLocaleDateString(undefined, options);
+    }
+
     // Function to display tasks in the task list
     function displayTasks() {
         taskList.innerHTML = ''; // Clear existing tasks in the list
         tasks.forEach(function(task, index) { // Loop through each task
             const li = document.createElement('li'); // Create a new list item for each task
-            li.textContent = task.name; // Set the task name as the text content
+            li.textContent = `${task.name} (Added on: ${formatDate(task.date)})`; // Set the task name and date as the text content
             if (task.completed) { // Check if the task is completed
                 li.classList.add('completed'); // Add the 'completed' class for styling
             }
@@ -38,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); // Prevent the default form submission behavior
         const taskName = taskInput.value.trim(); // Get and trim the task name from the input field
         if (taskName !== '') { // Check if the task name is not empty
-            tasks.push({ name: taskName, completed: false }); // Add the new task to the task list
+            const taskDate = new Date(); // Capture the current date and time
+            tasks.push({ name: taskName, completed: false, date: taskDate }); // Add the new task with the date
             taskInput.value = ''; // Clear the input field
             displayTasks(); // Update the displayed task list
         }
